@@ -8,21 +8,26 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.unittest.R
 import com.example.unittest.databinding.FragmentShoppingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ShoppingFragment : Fragment() {
 
     val viewModel : ShoppingViewModel by viewModels()
+    lateinit var binding : FragmentShoppingBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentShoppingBinding.inflate(inflater,container,false)
+        binding = FragmentShoppingBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.apply{
 
+        }
     }
 }

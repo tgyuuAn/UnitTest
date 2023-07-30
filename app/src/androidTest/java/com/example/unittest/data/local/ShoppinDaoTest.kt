@@ -2,7 +2,9 @@ package com.example.unittest.data.local
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.filters.SmallTest
+import com.example.unittest.launchFragmentInHiltContainer
 import com.example.unittest.other.LiveDataUtil.getOrAwaitValue
+import com.example.unittest.presentation.ShoppingFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -39,6 +41,13 @@ class ShoppinDaoTest {
     @After
     fun tearDown() {
         database.close()
+    }
+
+    @Test
+    fun `힐트_컨테이너에서_프래그먼트_테스트가_돌아가는지_확인한다`() {
+        launchFragmentInHiltContainer<ShoppingFragment> {
+
+        }
     }
 
     @Test

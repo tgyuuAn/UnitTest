@@ -5,17 +5,14 @@ import androidx.room.Room
 import com.example.unittest.data.local.ShoppingItemDatabase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dagger.hilt.testing.TestInstallIn
 import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-@TestInstallIn(
-    components = [SingletonComponent::class],
-    replaces = [AppModule::class]
-)
+@InstallIn(SingletonComponent::class)
 object TestAppModule {
 
     @Provides
