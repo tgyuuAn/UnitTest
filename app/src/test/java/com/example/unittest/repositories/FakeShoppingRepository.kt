@@ -26,7 +26,6 @@ class FakeShoppingRepository : ShoppingRepository{
 
     }
 
-
     private fun refreshLiveData() {
         observableShoppingItems.postValue(shoppingItems)
         observableTotalPrice.postValue(getTotalPriceTest())
@@ -38,7 +37,6 @@ class FakeShoppingRepository : ShoppingRepository{
 
     override suspend fun insertShoppingItem(shoppingItem: ShoppingItem) {
         shoppingItems.add(shoppingItem)
-        refreshLiveData()
     }
 
     override suspend fun deleteShoppingItem(shoppingItem: ShoppingItem) {

@@ -7,8 +7,8 @@ import com.example.unittest.data.local.ShoppingDao
 import com.example.unittest.data.local.ShoppingItemDatabase
 import com.example.unittest.data.remote.PixabayAPI
 import com.example.unittest.domain.ShoppingRepository
-import com.example.unittest.other.constant.DATABASE_NAME
-import com.example.unittest.other.constant.PIXABAY_BASE_URL
+import com.example.unittest.other.Constant.DATABASE_NAME
+import com.example.unittest.other.Constant.PIXABAY_BASE_URL
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -28,7 +28,7 @@ object AppModule {
     @Singleton
     fun provideShoppingItemDatabase(
         @ApplicationContext context: Context
-    ) = Room.databaseBuilder(context, ShoppingItemDatabase::class.java, DATABASE_NAME)
+    ) : ShoppingItemDatabase = Room.databaseBuilder(context, ShoppingItemDatabase::class.java, DATABASE_NAME).build()
 
     @Provides
     @Singleton
