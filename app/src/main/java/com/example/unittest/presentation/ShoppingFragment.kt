@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.unittest.R
 import com.example.unittest.databinding.FragmentShoppingBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +28,11 @@ class ShoppingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply{
-
+            fabAddShoppingItem.setOnClickListener {
+                findNavController().navigate(
+                    ShoppingFragmentDirections.actionShoppingFragmentToAddShoppingItemFragment()
+                )
+            }
         }
     }
 }

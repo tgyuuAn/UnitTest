@@ -4,7 +4,9 @@ plugins {
     id 'kotlin-kapt'
     id("com.google.dagger.hilt.android")
     id 'kotlinx-serialization'
+    id("androidx.navigation.safeargs")
 }
+
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -51,6 +53,8 @@ dependencies {
 
 //힐트
     implementation("com.google.dagger:hilt-android:2.45")
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
     kapt("com.google.dagger:hilt-android-compiler:2.45")
 
 //레트로핏
@@ -79,6 +83,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:2.6.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.6.0"
+
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+
+    implementation "androidx.activity:activity-ktx:1.7.2"
+
 
 
 
